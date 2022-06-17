@@ -1,0 +1,29 @@
+$work: #ff031b;
+@mixin thumb($bg-color: $work) {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  background-color: $bg-color;
+  &:focus {
+    outline-style: none;
+  }
+}
+
+@mixin track($border-color: $work) {
+  border: 2px solid $border-color;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.thumb-work {
+  @include thumb();
+}
+.thumb-relax {
+  @include thumb(green);
+}
+.track-work {
+  @include track();
+}
+.track-relax {
+  @include track(green);
+}

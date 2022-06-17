@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import { Col, Row } from "antd";
 
-function App() {
+import { Timer } from "./components/Timer";
+import { Settings } from "./components/Settings";
+
+import "./App.scss";
+
+const StyledApp = styled(Row)`
+  height: 100vh;
+  background-color: #2a3141;
+`;
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp align="middle" justify="center">
+      <Col span={24}>
+        <Timer />
+        <Settings />
+      </Col>
+    </StyledApp>
   );
-}
+};
 
 export default App;
