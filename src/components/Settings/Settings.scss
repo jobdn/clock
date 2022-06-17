@@ -2,7 +2,7 @@ $work: #ff031b;
 @mixin thumb($bg-color: $work) {
   height: 40px;
   width: 40px;
-  border-radius: 40px;
+  border-radius: 20px;
   background-color: $bg-color;
   &:focus {
     outline-style: none;
@@ -10,9 +10,9 @@ $work: #ff031b;
 }
 
 @mixin track($border-color: $work) {
-  border: 2px solid $border-color;
   height: 40px;
-  border-radius: 40px;
+  border: 2px solid $border-color;
+  border-radius: 20px;
 }
 
 .thumb-work {
