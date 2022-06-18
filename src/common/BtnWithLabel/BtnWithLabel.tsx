@@ -4,9 +4,16 @@ import styled from "styled-components";
 const StyledBtn = styled(Tooltip)`
   cursor: pointer;
   transition: 0.4s;
-  padding-top: 20px;
+  padding: 10px 20px;
+  background-color: #3a424f;
+  border-radius: 20px;
   &:hover {
     scale: 1.1;
+  }
+
+  svg {
+    position: relative;
+    top: 3px;
   }
 `;
 

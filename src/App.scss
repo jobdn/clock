@@ -1,12 +1,17 @@
 @import "~antd/dist/antd.css";
 
 .ant-typography {
-  color: #fff;
+  color: #d0d0d0;
   font-size: 20px;
 }
 
 .anticon svg {
-  height: 50px;
-  width: 50px;
-  color: #fff;
+  height: 35px;
+  width: 35px;
+  color: #d0d0d0;
+}
+
+.anticon.big svg {
+  height: 70px;
+  width: 70px;
 }

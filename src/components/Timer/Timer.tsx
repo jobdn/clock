@@ -6,7 +6,7 @@ import { SettingsButton } from "../SettingsButton";
 
 export const Timer: React.FC = () => {
   const [time, setTime] = React.useState<number>(0);
-
+  const [isStarted, setIsStarted] = React.useState<boolean>(false);
   React.useEffect(() => {
     // const tick = () => {
     //   setTime((t) => t + 1);
@@ -27,19 +27,25 @@ export const Timer: React.FC = () => {
               type="circle"
               strokeWidth={12}
               strokeColor="red"
+              trailColor="#d0d0d0"
               width={300}
             />
           </Col>
         </Row>
-        <Row style={{ marginTop: "40px" }}>
-          <Col span={12} style={{ textAlign: "center" }}>
-            <PlayButton />
-          </Col>
-          <Col span={12} style={{ textAlign: "center" }}>
-            <PauseButton />
+        <Row style={{ margin: "40px 0 20px" }} justify="center">
+          <Row>
+            {isStarted ? (
+              <PauseButton handleClick={setIsStarted} />
+            ) : (
+              <PlayButton handleClick={setIsStarted} />
+            )}
+          </Row>
+        </Row>
+        <Row justify="center">
+          <Col>
+            <SettingsButton />
           </Col>
         </Row>
-        <SettingsButton />
       </Col>
     </Row>
   );
