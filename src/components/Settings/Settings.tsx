@@ -1,8 +1,9 @@
-import { Col, Row, Slider, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
 import React from "react";
 import ReactSlider from "react-slider";
 import styled from "styled-components";
 import { SettingsContext } from "../../context/settings-context";
+import { LeftButton } from "../LeftButton";
 
 import "./Settings.scss";
 
@@ -42,6 +43,11 @@ export const Settings: React.FC = () => {
               trackClassName="track-relax"
               onChange={(relaxMin) => setRelaxMinutes(relaxMin)}
             />
+          </Col>
+        </SettingsRow>
+        <SettingsRow>
+          <Col>
+            <LeftButton />
           </Col>
         </SettingsRow>
       </Col>
