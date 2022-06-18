@@ -5,6 +5,7 @@ export interface ISettingsContext {
   setWorkMinutes: (min: number) => void;
   relaxMinutes: number;
   setRelaxMinutes: (min: number) => void;
+  setShowSettings: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const defaultSettings: ISettingsContext = {
@@ -12,6 +13,7 @@ const defaultSettings: ISettingsContext = {
   setWorkMinutes: (workMin) => {},
   relaxMinutes: 15,
   setRelaxMinutes: (relaxMin) => {},
+  setShowSettings: () => {},
 };
 
 export const SettingsContext =
