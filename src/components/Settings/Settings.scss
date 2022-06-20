@@ -19,11 +19,11 @@ $work: #ff031b;
   @include thumb();
 }
 .thumb-relax {
-  @include thumb(green);
+  @include thumb(#01e888);
 }
 .track-work {
   @include track();
 }
 .track-relax {
-  @include track(green);
+  @include track(#01e888);
 }

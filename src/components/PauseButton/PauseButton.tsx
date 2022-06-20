@@ -4,13 +4,13 @@ import React from "react";
 
 //TODO: remove repeating myselft in props of PlayButton component and here
 interface PauseButtonProps {
-  handleClick: React.Dispatch<React.SetStateAction<boolean>>;
+  handleClick: () => void;
 }
 
 export const PauseButton: React.FC<PauseButtonProps> = ({ handleClick }) => {
   return (
     <Tooltip title="Pause">
-      <PauseCircleFilled className="big" onClick={() => handleClick(false)} />
+      <PauseCircleFilled className="big" onClick={handleClick} />
     </Tooltip>
   );
 };

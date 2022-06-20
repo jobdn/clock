@@ -17,6 +17,7 @@ const App: React.FC = () => {
   const [workMinutes, setWorkMinutes] = React.useState<number>(0);
   const [relaxMinutes, setRelaxMinutes] = React.useState<number>(0);
   const [showSettings, setShowSettings] = React.useState<boolean>(false);
+
   return (
     <SettingsContext.Provider
       value={{

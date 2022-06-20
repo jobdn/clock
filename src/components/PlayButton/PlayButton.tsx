@@ -3,13 +3,13 @@ import { Tooltip } from "antd";
 import React from "react";
 
 interface PlayButtonProps {
-  handleClick: React.Dispatch<React.SetStateAction<boolean>>;
+  handleClick: () => void;
 }
 
 export const PlayButton: React.FC<PlayButtonProps> = ({ handleClick }) => {
   return (
     <Tooltip title="Play">
-      <PlayCircleFilled className="big" onClick={() => handleClick(true)} />
+      <PlayCircleFilled className="big" onClick={handleClick} />
     </Tooltip>
   );
 };

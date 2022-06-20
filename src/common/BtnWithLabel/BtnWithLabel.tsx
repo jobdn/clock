@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const StyledBtn = styled(Tooltip)`
   cursor: pointer;
+  user-select: none;
   transition: 0.4s;
   padding: 10px 20px;
   background-color: #3a424f;
