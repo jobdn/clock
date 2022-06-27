@@ -1,10 +1,13 @@
 import React from "react";
 import { Col, Progress, Row } from "antd";
+import Sound from "react-sound";
 
 import { PauseButton } from "../PauseButton";
 import { PlayButton } from "../PlayButton";
 import { SettingsButton } from "../SettingsButton";
 import { SettingsContext } from "../../context/settings-context";
+
+import CompleteSound from "../../assets/complete.wav";
 
 type AvailableModes = "work" | "relax";
 
@@ -15,6 +18,9 @@ export const Timer: React.FC = () => {
   const { workMinutes, relaxMinutes } = React.useContext(SettingsContext);
 
   const [isStarted, setIsStarted] = React.useState<boolean>(false);
+  const [playStatus, setPlayStatus] = React.useState<
+    "PLAYING" | "STOPPED" | "PAUSED"
+  >("STOPPED");
   const [mode, setMode] = React.useState<AvailableModes>("work");
   const [secondsLeft, setSecondsLeft] = React.useState<number>(0);
 
@@ -57,7 +63,10 @@ export const Timer: React.FC = () => {
 
     const intervalId = setInterval(() => {
       if (!isStartedRef.current) return;
-      if (secondsLeftRef.current === 0) return switchMode();
+      if (secondsLeftRef.current === 0) {
+        setPlayStatus("PLAYING");
+        return switchMode();
+      }
       tick();
     }, 1000);
 
@@ -80,6 +89,11 @@ export const Timer: React.FC = () => {
   return (
     <Row align="middle" justify="center">
       <Col>
+        <Sound
+          url={CompleteSound}
+          playStatus={playStatus}
+          onFinishedPlaying={() => setPlayStatus("STOPPED")}
+        />
         <Row>
           <Col>
             <Progress
