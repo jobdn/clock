@@ -42,6 +42,9 @@ export const Timer: React.FC = () => {
 
     setSecondsLeft(nextSecondsLeft);
     secondsLeftRef.current = nextSecondsLeft;
+
+    setIsStarted(false);
+    isStartedRef.current = false;
   };
 
   const tick = () => {
@@ -57,13 +60,14 @@ export const Timer: React.FC = () => {
       if (secondsLeftRef.current === 0) return switchMode();
       tick();
     }, 100);
+
     return () => clearInterval(intervalId);
   }, [workMinutes, relaxMinutes]);
 
   const getPercent = () => {
-    const percentLeft =
-      secondsLeftRef.current /
-      (modeRef.current === "work" ? workMinutes : relaxMinutes);
+    const totalSeconds =
+      (modeRef.current === "work" ? workMinutes : relaxMinutes) * 60;
+    const percentLeft = (secondsLeftRef.current / totalSeconds) * 100;
     return percentLeft;
   };
 
