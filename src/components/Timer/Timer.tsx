@@ -59,7 +59,7 @@ export const Timer: React.FC = () => {
       if (!isStartedRef.current) return;
       if (secondsLeftRef.current === 0) return switchMode();
       tick();
-    }, 100);
+    }, 1000);
 
     return () => clearInterval(intervalId);
   }, [workMinutes, relaxMinutes]);

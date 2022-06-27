@@ -18,7 +18,7 @@ export const Settings: React.FC = () => {
 
   return (
     <Row justify="center">
-      <Col span={10}>
+      <Col style={{ minWidth: "300px" }}>
         <SettingsRow>
           <Col span={24}>
             <Typography.Text>Work: {workMinutes} : 00</Typography.Text>
